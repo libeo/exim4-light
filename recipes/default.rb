@@ -17,9 +17,9 @@
 # limitations under the License.
 #
 
-case node['platform']
-when "ubuntu","debian"
-  package "exim4-daemon-light"
+case node['platform_family']
+when 'debian'
+  package 'exim4-daemon-light'
 end
 
 template "/etc/mailname" do
